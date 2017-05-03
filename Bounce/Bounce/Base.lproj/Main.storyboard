@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Bounce" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="s0Q-WZ-hEd" kind="show" identifier="toSettings" id="8hM-BV-UDU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Vc6-R6-kKI">
+            <objects>
+                <viewController id="s0Q-WZ-hEd" customClass="SettingsViewController" customModule="Bounce" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O5H-MJ-dJH"/>
+                        <viewControllerLayoutGuide type="bottom" id="dFf-g9-fZj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fgD-T4-S2E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNm-jd-uB5">
+                                <rect key="frame" x="155" y="28" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Effects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-Nr-ojZ">
+                                <rect key="frame" x="16" y="56" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-jw-B88">
+                                <rect key="frame" x="310" y="51" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SESwiped:" destination="s0Q-WZ-hEd" eventType="valueChanged" id="doz-Qb-glw"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mne-WV-KkY">
+                                <rect key="frame" x="310" y="90" width="51" height="31"/>
+                                <connections>
+                                    <action selector="BMSwiped:" destination="s0Q-WZ-hEd" eventType="valueChanged" id="8uD-ti-Fpc"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu8-OM-Tbh">
+                                <rect key="frame" x="169" y="142" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneTapped:" destination="s0Q-WZ-hEd" eventType="touchUpInside" id="k2X-Sv-UN6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-86-U4p">
+                                <rect key="frame" x="16" y="95" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mne-WV-KkY" firstAttribute="trailing" secondItem="fgD-T4-S2E" secondAttribute="trailingMargin" id="024-Zf-p3T"/>
+                            <constraint firstItem="LNN-Nr-ojZ" firstAttribute="top" secondItem="O5H-MJ-dJH" secondAttribute="bottom" constant="36" id="0HH-id-tGP"/>
+                            <constraint firstItem="oQd-jw-B88" firstAttribute="top" secondItem="O5H-MJ-dJH" secondAttribute="bottom" constant="31" id="40c-so-KYv"/>
+                            <constraint firstItem="Iu8-OM-Tbh" firstAttribute="centerX" secondItem="fgD-T4-S2E" secondAttribute="centerX" id="84B-di-EDU"/>
+                            <constraint firstItem="Hkc-86-U4p" firstAttribute="leading" secondItem="fgD-T4-S2E" secondAttribute="leadingMargin" id="87T-BY-iw4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Iu8-OM-Tbh" secondAttribute="trailing" constant="153" id="D7F-qe-BUF"/>
+                            <constraint firstItem="oNm-jd-uB5" firstAttribute="top" secondItem="O5H-MJ-dJH" secondAttribute="bottom" constant="8" id="Ipa-QG-ufD"/>
+                            <constraint firstItem="LNN-Nr-ojZ" firstAttribute="leading" secondItem="fgD-T4-S2E" secondAttribute="leadingMargin" id="K4d-Cd-Rl6"/>
+                            <constraint firstItem="Mne-WV-KkY" firstAttribute="top" secondItem="oQd-jw-B88" secondAttribute="bottom" constant="8" id="KwM-me-oXG"/>
+                            <constraint firstItem="Iu8-OM-Tbh" firstAttribute="top" secondItem="oNm-jd-uB5" secondAttribute="bottom" constant="93" id="NE2-GO-zr8"/>
+                            <constraint firstItem="oNm-jd-uB5" firstAttribute="leading" secondItem="fgD-T4-S2E" secondAttribute="leadingMargin" constant="139" id="Xac-Jy-Wfz"/>
+                            <constraint firstItem="Hkc-86-U4p" firstAttribute="top" secondItem="LNN-Nr-ojZ" secondAttribute="bottom" constant="18" id="ZPX-h6-iVx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oNm-jd-uB5" secondAttribute="trailing" constant="140" id="c7g-fV-bm7"/>
+                            <constraint firstItem="Iu8-OM-Tbh" firstAttribute="leading" secondItem="fgD-T4-S2E" secondAttribute="leadingMargin" constant="153" id="ezL-rl-L58"/>
+                            <constraint firstItem="oQd-jw-B88" firstAttribute="trailing" secondItem="fgD-T4-S2E" secondAttribute="trailingMargin" id="pGs-dp-bV3"/>
+                            <constraint firstItem="oNm-jd-uB5" firstAttribute="centerX" secondItem="fgD-T4-S2E" secondAttribute="centerX" id="zO3-qm-aFa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundSwitch" destination="Mne-WV-KkY" id="wY3-oS-cHh"/>
+                        <outlet property="soundEffectsSwitch" destination="oQd-jw-B88" id="WQE-Oo-g0w"/>
+                        <segue destination="4d8-wz-DqJ" kind="unwind" identifier="unwindFromSettings" unwindAction="unwindFromSettingsWithSender:" id="Ka8-S0-itb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swe-XO-mb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4d8-wz-DqJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="139"/>
+        </scene>
+    </scenes>
+</document>
